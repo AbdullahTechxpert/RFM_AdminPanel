@@ -1,0 +1,12 @@
+.dashboardContainer {
+  flex: 1;
+  padding-left: 5vh;
+}
+.topImage {
+  display: block;
+  width: 95%;
+  height: 200px;
+  align-self: center;
+  margin-top: 3%;
+  /* margin-left: 4vh; */
+}

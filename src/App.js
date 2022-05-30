@@ -1,9 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useContext } from "react";
 import * as XLSX from "xlsx";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home/home";
+import Signin from "./pages/Signin/signin";
+import { AuthProvider } from "./Authentication/AuthProvider";
+import { AuthContext } from "./Authentication/AuthProvider";
 
 function App() {
-  console.log("hello world");
+  console.log("App");
+
+  // const { user } = useContext(AuthContext);
   // const readExcel = (file) => {
   //   const promise = new Promise((resolve, reject) => {
   //     const fileReader = new FileReader();
@@ -45,23 +51,25 @@ function App() {
   // };
 
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-
-    // <div>
-    //   {/* <input
-    //     type="file"
-    //     onChange={(e) => {
-    //       const file = e.target.files[0];
-    //       readExcel(file);
-    //     }}
-    //   /> */}
-
-    //   <input type="file" onChange={onChange} />
-    //   <h1>Hello world</h1>
-    // </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+      {/* <Signin /> */}
+    </AuthProvider>
   );
+  // <div>
+  //   {/* <input
+  //     type="file"
+  //     onChange={(e) => {
+  //       const file = e.target.files[0];
+  //       readExcel(file);
+  //     }}
+  //   /> */}
+
+  //   <input type="file" onChange={onChange} />
+  //   <h1>Hello world</h1>
+  // </div>
 }
 
 export default App;

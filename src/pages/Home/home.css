@@ -1,0 +1,9 @@
+.Container {
+  display: flex;
+}
+.middleContainer {
+  flex: 4;
+  background-color: #0079ca;
+  display: flex;
+  /* flex-direction: column; */
+}
