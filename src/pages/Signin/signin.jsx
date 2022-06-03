@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,6 +12,15 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { AuthContext } from "../../Authentication/AuthProvider";
+import { initializeApp } from "firebase/app";
+import { FirebaseConfig } from "../../Firebase/firebase";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
 // import {
 //   createUserWithEmailAndPassword,
 //   signInWithEmailAndPassword,
@@ -22,22 +31,50 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import firebase from "../../firebase-config";
 // import { auth } from "../../firebase-config";
 const theme = createTheme();
-const onLogin = async (email, password) => {
-  console.log("value", email, password);
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    console.log("Firebase Login successful");
-  } catch (error) {
-    alert(
-      error.message + "\n\n...Your password or email is invalid"[{ text: "Ok" }]
-    );
-  }
-};
+
 function Signin() {
+  const { setUser } = useContext(AuthContext);
+
+  // This function Authenticate Admin
+
+  const AuthenticateAdmin = (values) => {
+    console.log("values:", values.email);
+
+    // const fireEmail = Email;
+    // const firePassword = Password;
+
+    const config = FirebaseConfig();
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyAiiuFlgmeo7HKPKwy_KtNhG9BDP1fQo9U",
+    //   authDomain: "rfmloyaltyco-7ddf2.firebaseapp.com",
+    //   projectId: "rfmloyaltyco-7ddf2",
+    //   storageBucket: "rfmloyaltyco-7ddf2.appspot.com",
+    //   messagingSenderId: "95588283237",
+    //   appId: "1:95588283237:web:c65b402678bc14135d678c",
+    //   measurementId: "G-JEQBWFKF48",
+    // };
+
+    // const config = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user.getIdToken().then(async (idToken) => {
+          console.log("userCredential:", idToken);
+          setUser(idToken);
+        });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    onLogin({
+    AuthenticateAdmin({
       email: data.get("email"),
       password: data.get("password"),
     });
@@ -86,10 +123,7 @@ function Signin() {
               id="password"
               autoComplete="current-password"
             />
-            {/* <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            /> */}
+
             <Button
               style={{ backgroundColor: "#003e68" }}
               type="submit"
@@ -99,18 +133,6 @@ function Signin() {
             >
               Sign In
             </Button>
-            {/* <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid> */}
           </Box>
         </Box>
       </Container>

@@ -8,7 +8,7 @@ import CreateUser from "../CreateUser/createUser";
 import Complains from "../Complains/complains";
 import Services from "../Services/services";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div>
       <TopBar />
@@ -16,7 +16,10 @@ export default function Home() {
         <Sidebar />
         <div className="middleContainer">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route
+              path="/"
+              element={<Dashboard firebaseConfig={props.firebaseConfig} />}
+            />
             <Route path="/CreateUser" element={<CreateUser />} />
             <Route path="/Complains" element={<Complains />} />
             <Route path="/Services" element={<Services />} />

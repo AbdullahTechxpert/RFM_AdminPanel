@@ -1,7 +1,7 @@
 .sideBarContainer {
   flex: 1;
   background-color: #0099ff;
-  height: calc(100vh - 50px);
+  height: calc(100vh);
 }
 .sideBarButton {
   background-color: #003e68;

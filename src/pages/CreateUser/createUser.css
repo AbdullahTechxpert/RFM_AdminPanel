@@ -1,0 +1,62 @@
+.inputField {
+  width: 350px;
+  height: 20px;
+  background-color: "white";
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 3px solid #0079ca;
+
+  transition: 1s;
+  outline: none;
+}
+.inputField:focus {
+  border-color: #0099ff;
+}
+.Container {
+  flex: 1;
+  align-items: center;
+  background-color: #0079ca;
+  justify-content: space-around;
+}
+.formContainer {
+  display: flex;
+  background-color: #003e68;
+  width: 40%;
+  height: 80vh;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  align-items: center;
+  flex-direction: column;
+}
+.formTitle {
+  color: white;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.Button {
+  background-color: #ffae00;
+  margin-top: 40px;
+  color: white;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  cursor: pointer;
+  border-width: 0;
+}
+.dropDown {
+  width: 90%;
+  height: 50px;
+  /* background-color: white; */
+  color: #003e68;
+  /* margin: 10px 0px; */
+  margin-top: 10px;
+}
