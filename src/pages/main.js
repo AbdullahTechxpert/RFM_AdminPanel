@@ -8,13 +8,13 @@ import { AuthProvider } from "../Authentication/AuthProvider";
 import { AuthContext } from "../Authentication/AuthProvider";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAiiuFlgmeo7HKPKwy_KtNhG9BDP1fQo9U",
-  authDomain: "rfmloyaltyco-7ddf2.firebaseapp.com",
-  projectId: "rfmloyaltyco-7ddf2",
-  storageBucket: "rfmloyaltyco-7ddf2.appspot.com",
-  messagingSenderId: "95588283237",
-  appId: "1:95588283237:web:c65b402678bc14135d678c",
-  measurementId: "G-JEQBWFKF48",
+  apiKey: "AIzaSyA7X13N9VWt75lTmyfrEKQzub4i6XbtauA",
+  authDomain: "temprfmadminpanel.firebaseapp.com",
+  projectId: "temprfmadminpanel",
+  storageBucket: "temprfmadminpanel.appspot.com",
+  messagingSenderId: "668623256797",
+  appId: "1:668623256797:web:2b694d8d96d172f328ef34",
+  measurementId: "G-FNWJP9M6SC",
 };
 
 export default function Main() {
