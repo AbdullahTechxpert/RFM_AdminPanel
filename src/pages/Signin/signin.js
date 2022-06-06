@@ -80,7 +80,7 @@ function Signin() {
     });
   };
   return (
-    <ThemeProvider theme={theme} style={{ backgroundColor: "#0079ca" }}>
+    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
