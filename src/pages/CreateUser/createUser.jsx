@@ -85,7 +85,7 @@ export default function CreateUser() {
         )}
       </Formik>
       <img
-        src={require("../../assets/images/AddUser3.png")}
+        src={require("../../assets/images/AddUser4.png")}
         style={{ height: 500, width: 500 }}
       />
       <Snackbar

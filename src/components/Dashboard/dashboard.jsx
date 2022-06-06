@@ -153,7 +153,7 @@ export default function Dashboard(props) {
         </div>
       ) : null}
       <img
-        src={require("../../assets/images/p1.jpg")}
+        src={require("../../assets/images/t1.png")}
         alt="RFM Image"
         className="topImage"
       />
@@ -164,7 +164,6 @@ export default function Dashboard(props) {
         <input
           type="file"
           style={{ opacity: 0, position: "absolute" }}
-          className="Button"
           onChange={(e) => {
             const file = e.target.files[0];
 
@@ -174,7 +173,7 @@ export default function Dashboard(props) {
       </div>
       {progressBar ? (
         <div className="progressBar">
-          <Line percent={progressBar} strokeWidth={1} strokeColor="#003e68" />
+          <Line percent={progressBar} strokeWidth={1} strokeColor="#111111" />
           <div className="progressBarPercentage">{`${parseInt(
             progressBar
           )}%`}</div>

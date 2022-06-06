@@ -3,7 +3,7 @@
   padding-left: 5vh;
 }
 .topImage {
-  display: block;
+  /* display: block; */
   width: 95%;
   height: 200px;
   align-self: center;
@@ -12,7 +12,7 @@
 }
 
 .Button {
-  background-color: #003e68;
+  background-color: #111111;
   margin: 10px;
   color: white;
   width: 200px;
@@ -36,7 +36,7 @@
 }
 .logoutModal {
   display: flex;
-  background-color: #0099ff;
+  background-color: #333333;
   width: 300px;
   height: 100px;
   position: absolute;
@@ -48,7 +48,7 @@
 }
 
 .blueButton {
-  background-color: #003e68;
+  background-color: #111111;
   margin: 10px;
   color: white;
   width: 250px;

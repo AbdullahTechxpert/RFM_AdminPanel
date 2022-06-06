@@ -4,7 +4,7 @@
   background-color: "white";
   padding: 12px 20px;
   margin: 8px 0;
-  border: 3px solid #0079ca;
+  border: 3px solid #555555;
 
   transition: 1s;
   outline: none;
@@ -15,12 +15,12 @@
 .Container {
   flex: 1;
   align-items: center;
-  background-color: #0079ca;
+  background-color: #555555;
   justify-content: space-around;
 }
 .formContainer {
   display: flex;
-  background-color: #003e68;
+  background-color: #111111;
   width: 40%;
   height: 80vh;
   border-radius: 10px;
@@ -38,7 +38,7 @@
   margin-bottom: 50px;
 }
 .Button {
-  background-color: #ffae00;
+  background-color: #333333;
   margin-top: 40px;
   color: white;
   height: 40px;

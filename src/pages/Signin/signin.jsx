@@ -91,7 +91,7 @@ function Signin() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, backgroundColor: "#0079ca" }}>
+          <Avatar sx={{ m: 1, backgroundColor: "#111111" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -125,7 +125,7 @@ function Signin() {
             />
 
             <Button
-              style={{ backgroundColor: "#003e68" }}
+              style={{ backgroundColor: "#111111" }}
               type="submit"
               fullWidth
               variant="contained"
