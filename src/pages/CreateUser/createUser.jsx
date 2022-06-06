@@ -7,8 +7,6 @@ import { Formik } from "formik";
 import Select from "react-select";
 import { getMIDs, createUser } from "../../Firebase/firebase";
 import { signupSchema } from "../../Validations/formValidations";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 
 export default function CreateUser() {
   const [MIDsFromFirebase, setMIDsFromFirebase] = useState([]);
@@ -88,23 +86,6 @@ export default function CreateUser() {
         src={require("../../assets/images/AddUser4.png")}
         style={{ height: 500, width: 500 }}
       />
-      <Snackbar
-        open={userCreated}
-        autoHideDuration={5000}
-        onClose={() => setUserCreated(false)}
-      >
-        <MuiAlert
-          severity="success"
-          sx={{
-            width: 500,
-            backgroundColor: "green",
-            color: "white",
-            fontWeight: 500,
-          }}
-        >
-          The user have been created successfully!
-        </MuiAlert>
-      </Snackbar>
     </div>
   );
 }

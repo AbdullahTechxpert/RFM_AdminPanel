@@ -5,9 +5,6 @@ import { initializeApp } from "firebase/app";
 import * as XLSX from "xlsx";
 import { Line, Circle } from "rc-progress";
 
-// import Snackbar from "@mui/material/Snackbar";
-// import MuiAlert from "@mui/material/Alert";
-
 import UploadIcon from "@mui/icons-material/Upload";
 
 import "./dashboard.css";

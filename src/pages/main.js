@@ -20,11 +20,9 @@ const firebaseConfig = {
 export default function Main() {
   const { user } = useContext(AuthContext);
 
-  return user ? (
+  return (
     <BrowserRouter>
       <Home firebaseConfig={firebaseConfig} />
     </BrowserRouter>
-  ) : (
-    <Signin />
   );
 }
