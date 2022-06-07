@@ -1,0 +1,10 @@
+.Container {
+  display: flex;
+}
+.middleContainer {
+  flex: 4;
+  background-color: #555555;
+  display: flex;
+  height: 100vh;
+  /* flex-dcirection: column; */
+}

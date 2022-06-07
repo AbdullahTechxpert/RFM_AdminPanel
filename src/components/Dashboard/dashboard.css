@@ -1,0 +1,70 @@
+.dashboardContainer {
+  flex: 1;
+  padding-left: 5vh;
+}
+.topImage {
+  /* display: block; */
+  width: 95%;
+  height: 200px;
+  align-self: center;
+  margin-top: 3%;
+  /* margin-left: 4vh; */
+}
+
+.Button {
+  background-color: #111111;
+  margin: 10px;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  font-family: sans-serif;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+}
+.Button:hover {
+  background-color: #525252;
+}
+.progressBar {
+  width: 1000px;
+}
+.progressBarPercentage {
+  color: white;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: large;
+}
+.logoutModal {
+  display: flex;
+  background-color: #333333;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.blueButton {
+  background-color: #111111;
+  margin: 10px;
+  color: white;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  align-items: center;
+  justify-content: center;
+}
+.blueButton:hover {
+  background-color: #2c2b2b;
+}

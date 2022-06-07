@@ -1,0 +1,25 @@
+.sideBarContainer {
+  flex: 1;
+  background-color: #333333;
+  height: calc(100vh);
+}
+.sideBarButton {
+  background-color: #111111;
+  margin: 10px;
+  color: white;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.51);
+}
+
+.sideBarButton:hover {
+  background-color: #242222;
+}
+.sideBarButtonIcon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
