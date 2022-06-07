@@ -1,12 +1,19 @@
 import React, { useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  Timestamp,
+} from "firebase/firestore";
 import { async } from "@firebase/util";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import Snackbar from "@mui/material/Snackbar";
 
 export function FirebaseConfig() {
   const firebaseConfig = {
@@ -38,31 +45,36 @@ export const getMIDs = async () => {
 // This function is to create new user
 
 export const createUser = (values) => {
+  const { email, password, MID } = values;
+  console.log("=>", email, password, MID);
   const config = FirebaseConfig();
   const db = getFirestore();
   const auth = getAuth(config);
 
-  createUserWithEmailAndPassword(auth, values.email, values.password)
+  const result = createUserWithEmailAndPassword(auth, email, password)
     .then(async (userCredential) => {
       console.log("New User Created");
-      // Signed in
-      // const user = userCredential.user;
-      // ...
+
       try {
         const docRef = await addDoc(collection(db, "users"), {
-          email: values.email,
-          MID: values.MID,
+          email: email,
+          MID: MID,
+          CreatedAt: Timestamp.fromDate(new Date()),
         });
         console.log("Document written with ID: ", docRef.id);
         return true;
       } catch (e) {
         console.error("Error adding document: ", e);
+        return false;
       }
     })
     .catch((error) => {
+      console.log("error:", error);
       const errorCode = error.code;
       const errorMessage = error.message;
-      // ..
+
       return false;
     });
+
+  return result;
 };

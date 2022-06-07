@@ -7,10 +7,12 @@ import { Formik } from "formik";
 import Select from "react-select";
 import { getMIDs, createUser } from "../../Firebase/firebase";
 import { signupSchema } from "../../Validations/formValidations";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 export default function CreateUser() {
   const [MIDsFromFirebase, setMIDsFromFirebase] = useState([]);
-  const [userCreated, setUserCreated] = useState(false);
+  const [openSnackbar, setSnackbar] = useState(null);
 
   useEffect(() => {
     console.log("CreateUser");
@@ -32,9 +34,12 @@ export default function CreateUser() {
         }}
         validationSchema={signupSchema}
         onSubmit={async (values) => {
-          console.log("values", values);
-          createUser(values);
-          setUserCreated(true);
+          // const { email, password } = values;
+          const isUserCreated = await createUser(values);
+          console.log("===>isUserCreated", isUserCreated);
+          setSnackbar(isUserCreated);
+          // formikProps.resetForm();
+          // setUserCreated(true);
         }}
       >
         {(formikProps) => (
@@ -73,8 +78,7 @@ export default function CreateUser() {
               className="Button"
               type={"submit"}
               onClick={() => {
-                formikProps.handleSubmit();
-                formikProps.resetForm();
+                formikProps.handleSubmit(formikProps);
               }}
             >
               Signup
@@ -86,6 +90,29 @@ export default function CreateUser() {
         src={require("../../assets/images/AddUser4.png")}
         style={{ height: 500, width: 500 }}
       />
+      {/* success */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={() => {
+          setSnackbar(null);
+        }}
+      >
+        <MuiAlert severity="success" sx={{ width: 300 }}>
+          The User Created Successfully!
+        </MuiAlert>
+      </Snackbar>
+      <Snackbar
+        open={openSnackbar == false ? true : false}
+        autoHideDuration={3000}
+        onClose={() => {
+          setSnackbar(null);
+        }}
+      >
+        <MuiAlert severity="error" sx={{ width: 300 }}>
+          Enter Correct Email and Password
+        </MuiAlert>
+      </Snackbar>
     </div>
   );
 }

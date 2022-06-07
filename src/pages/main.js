@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import * as XLSX from "xlsx";
 import { BrowserRouter } from "react-router-dom";
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import Home from "../pages/Home/home";
 import Signin from "../pages/Signin/signin";
 import { AuthProvider } from "../Authentication/AuthProvider";
@@ -20,9 +21,11 @@ const firebaseConfig = {
 export default function Main() {
   const { user } = useContext(AuthContext);
 
-  return (
+  return user ? (
     <BrowserRouter>
       <Home firebaseConfig={firebaseConfig} />
     </BrowserRouter>
+  ) : (
+    <Signin />
   );
 }

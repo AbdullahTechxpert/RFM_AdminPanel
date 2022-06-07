@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./topBar.css";
+import { AuthContext } from "../../Authentication/AuthProvider";
 
 export default function TopBar() {
   const [modalVisability, setModalVisability] = useState(false);
+  const { setUser } = useContext(AuthContext);
   return (
     <div className="topBar">
       <div className="topBarWrapper">
@@ -29,9 +31,17 @@ export default function TopBar() {
       </div>
       {modalVisability ? (
         <div className="logoutModal">
-          <div className="blueButton">
-            <h3>logout</h3>
-          </div>
+          <button
+            className="blueButton"
+            type={"button"}
+            onClick={() => {
+              console.log("Logout");
+              setUser(false);
+            }}
+            title="555"
+          >
+            <h3>Logout</h3>
+          </button>
         </div>
       ) : null}
     </div>
