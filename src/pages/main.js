@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import * as XLSX from "xlsx";
+import React, { useContext } from "react";
+// import * as XLSX from "xlsx";
 import { BrowserRouter } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+// import { initializeApp } from "firebase/app";
+// import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import Home from "../pages/Home/home";
 import Signin from "../pages/Signin/signin";
-import { AuthProvider } from "../Authentication/AuthProvider";
+// import { AuthProvider } from "../Authentication/AuthProvider";
 import { AuthContext } from "../Authentication/AuthProvider";
 
 const firebaseConfig = {

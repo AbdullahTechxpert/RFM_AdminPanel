@@ -21,6 +21,8 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
+import "./signin.css";
+
 // import {
 //   createUserWithEmailAndPassword,
 //   signInWithEmailAndPassword,
@@ -30,7 +32,17 @@ import {
 // import { Link } from "react-router-dom";
 // import firebase from "../../firebase-config";
 // import { auth } from "../../firebase-config";
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    background: {
+      default: "#720a0a",
+    },
+    text: {
+      primary: "#ffffff",
+      secondary: "#ffffff",
+    },
+  },
+});
 
 function Signin() {
   const { setUser } = useContext(AuthContext);
@@ -91,9 +103,11 @@ function Signin() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, backgroundColor: "#111111" }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <img
+            src={require("../../assets/images/Logo.png")}
+            alt="RFM Image"
+            className="logo"
+          />
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -101,7 +115,7 @@ function Signin() {
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ mt: 1, color: "white" }}
           >
             <TextField
               margin="normal"

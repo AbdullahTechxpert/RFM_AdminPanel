@@ -1,17 +1,17 @@
-import React, { useContext, useEffect } from "react";
-import * as XLSX from "xlsx";
-import { BrowserRouter } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import Home from "./pages/Home/home";
-import Signin from "./pages/Signin/signin";
-import { AuthProvider } from "./Authentication/AuthProvider";
-import { AuthContext } from "./Authentication/AuthProvider";
+import React from "react";
+// import * as XLSX from "xlsx";
+// import { BrowserRouter } from "react-router-dom";
+// import { initializeApp } from "firebase/app";
+// import Home from "./pages/Home/home";
+// import Signin from "./pages/Signin/signin";
+// import { AuthProvider } from "./Authentication/AuthProvider";
+// import { AuthContext } from "./Authentication/AuthProvider";
 import Main from "./pages/main";
-import { AuthenticateAdmin } from "./Firebase/firebase";
+// import { AuthenticateAdmin } from "./Firebase/firebase";
 
 function App() {
   // console.log("App");
-  const obj = useContext(AuthContext);
+  // const obj = useContext(AuthContext);
 
   // This is firestore connect config
 

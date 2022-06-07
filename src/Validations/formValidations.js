@@ -1,5 +1,5 @@
 import React from "react";
-import * as yup from "yup";
+import { object } from "yup";
 
 // export const loginSchema = yup.object().shape({
 //   email: yup
@@ -10,7 +10,7 @@ import * as yup from "yup";
 //   password: yup.string().required('Please enter your Password'),
 // });
 
-export const signupSchema = yup.object().shape({
+export const signupSchema = object().shape({
   // name: yup
   //   .string()
   //   .required('Please enter your Name')

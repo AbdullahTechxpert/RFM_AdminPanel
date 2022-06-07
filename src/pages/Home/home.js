@@ -5,8 +5,8 @@ import TopBar from "../../components/TopBar/topBar";
 import Sidebar from "../../components/SideBar/sideBar";
 import Dashboard from "../../components/Dashboard/dashboard";
 import CreateUser from "../CreateUser/createUser";
-import Complains from "../Complains/complains";
-import Services from "../Services/services";
+// import Complains from "../Complains/complains";
+// import Services from "../Services/services";
 
 export default function Home(props) {
   return (
@@ -21,8 +21,8 @@ export default function Home(props) {
               element={<Dashboard firebaseConfig={props.firebaseConfig} />}
             />
             <Route path="/CreateUser" element={<CreateUser />} />
-            <Route path="/Complains" element={<Complains />} />
-            <Route path="/Services" element={<Services />} />
+            {/* <Route path="/Complains" element={<Complains />} />
+            <Route path="/Services" element={<Services />} /> */}
           </Routes>
         </div>
       </div>

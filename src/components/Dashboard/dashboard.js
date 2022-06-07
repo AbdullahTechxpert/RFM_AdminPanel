@@ -63,6 +63,7 @@ export default function Dashboard(props) {
   initializeApp(props.firebaseConfig);
   const db = getFirestore();
   useEffect(() => {
+    initializeApp(props.firebaseConfig);
     console.log("getAllUsers");
     getAllUsers();
   }, []);
