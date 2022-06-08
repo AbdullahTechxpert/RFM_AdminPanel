@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 // import * as XLSX from "xlsx";
 import { BrowserRouter } from "react-router-dom";
 // import { initializeApp } from "firebase/app";
 // import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import Home from "../pages/Home/home";
-import Signin from "../pages/Signin/signin";
+// import Signin from "../pages/Signin/signin";
 // import { AuthProvider } from "../Authentication/AuthProvider";
-import { AuthContext } from "../Authentication/AuthProvider";
+// import { AuthContext } from "../Authentication/AuthProvider";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA7X13N9VWt75lTmyfrEKQzub4i6XbtauA",
@@ -19,13 +19,11 @@ const firebaseConfig = {
 };
 
 export default function Main() {
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
 
-  return user ? (
+  return (
     <BrowserRouter>
       <Home firebaseConfig={firebaseConfig} />
     </BrowserRouter>
-  ) : (
-    <Signin />
-  );
+  )
 }

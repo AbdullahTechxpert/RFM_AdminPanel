@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DataGrid } from "@mui/x-data-grid";
+// import { DataGrid } from "@mui/x-data-grid";
 import {
   getFirestore,
   collection,
@@ -14,16 +14,16 @@ import UploadIcon from "@mui/icons-material/Upload";
 import "./dashboard.css";
 // import { FirebaseConfig } from "../../Firebase/firebase";
 
-const columns = [
-  { field: "id", headerName: "MID", width: 150 },
-  { field: "email", headerName: "Email", width: 300 },
-  { field: "tids", headerName: "Tids", width: 300 },
-  {
-    field: "createdAt",
-    headerName: "Created At",
-    width: 130,
-  },
-];
+// const columns = [
+//   { field: "id", headerName: "MID", width: 150 },
+//   { field: "email", headerName: "Email", width: 300 },
+//   { field: "tids", headerName: "Tids", width: 300 },
+//   {
+//     field: "createdAt",
+//     headerName: "Created At",
+//     width: 130,
+//   },
+// ];
 
 export default function Dashboard(props) {
   // const [fileUploaded, setFileUploaded] = useState(false);
@@ -192,7 +192,7 @@ export default function Dashboard(props) {
         </div>
       ) : null}
 
-      <div
+      {/* <div
         style={{
           height: "45%",
           width: "95%",
@@ -208,7 +208,7 @@ export default function Dashboard(props) {
           rowsPerPageOptions={[4]}
           checkboxSelection
         />
-      </div>
+      </div> */}
 
       {/* <Snackbar
         open={fileUploaded}
