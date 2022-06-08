@@ -14,7 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "../../Authentication/AuthProvider";
 // import { initializeApp } from "firebase/app";
-// import { FirebaseConfig } from "../../Firebase/firebase";
+import { FirebaseConfig } from "../../Firebase/firebase";
 import logo from '../../assets/images/Logo.png';
 import {
   getAuth,
@@ -53,10 +53,10 @@ function Signin() {
   const AuthenticateAdmin = (values) => {
     console.log("values:", values.email);
 
-    // const fireEmail = Email;
-    // const firePassword = Password;
+    // const fireEmail = values.Email;
+    // const firePassword = values.Password;
 
-    // const config = FirebaseConfig();
+    const config = FirebaseConfig();
     // const firebaseConfig = {
     //   apiKey: "AIzaSyAiiuFlgmeo7HKPKwy_KtNhG9BDP1fQo9U",
     //   authDomain: "rfmloyaltyco-7ddf2.firebaseapp.com",
